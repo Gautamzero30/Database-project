@@ -82,7 +82,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/levels", { cache: "force-cache" })
+    fetch("/api/levels")
       .then((res) => res.json())
       .then((data) => {
         setLevels(data);

@@ -36,10 +36,6 @@ export async function GET(request: NextRequest) {
       {} as Record<number, Level[]>,
     );
 
-    Object.values(grouped).forEach((worldLevels) => {
-      worldLevels.sort((a, b) => a.id.localeCompare(b.id));
-    });
-
     return NextResponse.json(grouped, {
       headers: {
         "Cache-Control": "public, max-age=300, stale-while-revalidate=1800",

@@ -108,7 +108,7 @@ export default function LevelPage() {
   useEffect(() => {
     if (!levelId) return;
 
-    fetch(`/api/levels?id=${levelId}`, { cache: "force-cache" })
+    fetch(`/api/levels?id=${levelId}`)
       .then((res) => res.json())
       .then((data) => {
         setLevel(data);
